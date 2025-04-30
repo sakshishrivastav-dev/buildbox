@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     function show(){
-        return "hello from ritu doidiya";
+        return "hello from ritu";
     }
 }
