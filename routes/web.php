@@ -18,5 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+// admin route 
 Route::get('/user', [UserController::class, 'show']);
+
+
+// user route

@@ -10,3 +10,6 @@ class UserController extends Controller
         return "hello from ritu";
     }
 }
+
+
+
