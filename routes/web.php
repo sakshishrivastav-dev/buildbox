@@ -21,5 +21,4 @@ Route::get('/', function () {
 // admin route 
 Route::get('/user', [UserController::class, 'show']);
 
-
 // user route
