@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,12 @@ Route::get('/', function () {
 });
 
 // admin route 
-Route::get('/user', [UserController::class, 'show']);
-Route::get('/geeeee', [UserController::class, 'show']);
+Route::get('/admin', [AdminController::class, 'index']);
+
+Route::get('/admin-profile', [AdminController::class, 'admin_profile'])->name('admin-profile');
+Route::post('/profileaction', [AdminController::class, 'profileaction']);
+
+
+Route::get('/logout',[AdminController::class,'logout'])->name('logout');
 
 // user route
