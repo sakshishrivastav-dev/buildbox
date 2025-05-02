@@ -19,7 +19,7 @@
 											</div>
 											<div class="col-7 d-flex align-items-center">
 												<div class="numbers">
-													<p class="card-category">Visitors</p>
+													<p class="card-category">Students</p>
 													<h4 class="card-title">1,294</h4>
 												</div>
 											</div>

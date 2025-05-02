@@ -18,36 +18,31 @@ class AdminController extends Controller
     }
 
 
-    public function admin_profile(){
+        public function admin_profile(){
+            $adminlogin = Admin_login::find(1);
+            return view('admin/profile', compact('adminlogin'));
+        }
 
-        return view('admin/profile');
-    }
 
       public function profileaction(Request $request){
-        
-            // Admin_login::create([
-            //     'email' => $request->email,
-            //     'password' => $request->email,
-            //     'hashed_passowrd' => md5($request->email),
-            //     'username' => $request->username,
-            // ]);
+            
+            $validated = $request->validate([
+                'email' => 'required',
+                'password' => 'required',
+                'username' => 'required',
 
-
-        // DB::table('admin_logins')->insert([
-        //         'email' => $request->email,
-        //         'password' => $request->email,
-        //         'hashed_passowrd' => md5($request->email),
-        //         'username' => $request->username,
-
-        //         ]);
-    
-
+            ]);
+               
                 Admin_login::where('id','1')->update([
-                              'email' =>'sakshi@gmail.com'
+                              'email' =>$request->email,
+                              'password' =>$request->password,
+                              'hashed_passowrd' =>md5($request->password),
+                              'username' =>$request->username,
+
                 ]);
-                // DB::table('admin_logins')->where('id','1')->update([
-          
-                // ]);
+
+                    return redirect('/admin')->with('success', 'Profile updated successfully');
+              
 
     }
 

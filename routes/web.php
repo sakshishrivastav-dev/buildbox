@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CoursesController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,12 +22,17 @@ Route::get('/', function () {
 });
 
 // admin route 
-Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 
 Route::get('/admin-profile', [AdminController::class, 'admin_profile'])->name('admin-profile');
-Route::post('/profileaction', [AdminController::class, 'profileaction']);
+Route::post('/profileaction', [AdminController::class, 'profileaction'])->name('profileaction');
 
 
 Route::get('/logout',[AdminController::class,'logout'])->name('logout');
+
+
+// courses route
+Route::get('/admin-courses', [CoursesController::class, 'index'])->name('admin-courses');
+Route::post('/addcourseaction', [CoursesController::class, 'addcourseaction'])->name('addcourseaction');
 
 // user route

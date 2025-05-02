@@ -98,7 +98,7 @@
 					</div>
 					<ul class="nav">
 						<li class="nav-item active">
-							<a href="index.html">
+							<a href="{{route('admin')}}">
 								<i class="la la-dashboard"></i>
 								<p>Dashboard</p>
 								<span class="badge badge-count">5</span>
