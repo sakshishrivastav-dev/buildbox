@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Services\MyCustomService;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,9 +14,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton('my-custom-service', function ($app) {
+            return new \App\Services\MyCustomService(); // Adjust namespace/class accordingly
+        });
     }
-
+    
     /**
      * Bootstrap any application services.
      *

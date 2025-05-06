@@ -208,8 +208,17 @@ return [
     |
     */
 
-    'aliases' => Facade::defaultAliases()->merge([
-        // 'ExampleClass' => App\Example\ExampleClass::class,
-    ])->toArray(),
+    'aliases' => [
+    'App' => Illuminate\Support\Facades\App::class,
+    'Artisan' => Illuminate\Support\Facades\Artisan::class,
+    'Route' => Illuminate\Support\Facades\Route::class,
+    // Add or check other facades as necessary
+],
+
+
+//     'aliases' => Facade::defaultAliases()->merge([
+//     'MyCustomFacade' => App\Facades\MyCustomFacade::class,
+// ])->toArray(),
+
 
 ];
